@@ -1,10 +1,10 @@
 # MammoNet vs ResNet-18
 
-Kod do pracy *Analiza porównawcza autorskiej sieci konwolucyjnej (MammoNet) z modelem
-uczenia transferowego (ResNet-18) w klasyfikacji obrazów mammograficznych z wykorzystaniem
-Explainable AI*, Michał Janiszewski, Inżynier i Fizyk Medyczny.
+Kod do pracy *Analiza porównawcza autorskiej sieci konwolucyjnej MammoNet z modelem
+uczenia transferowego ResNet-18 w klasyfikacji obrazów mammograficznych z wykorzystaniem
+Explainable AI*, Michał Janiszewski
 
-Zadanie: różnicowanie zwapnień i guzów na wycinkach zmian ogniskowych ze zbioru CBIS-DDSM.
+Zadanie: Rozróżnienie zwapnienia i guzów na wycinkach zmian ogniskowych ze zbioru CBIS-DDSM.
 Porównanie obejmuje skuteczność klasyfikacji, koszt obliczeniowy oraz charakter map
 atrybucji generowanych metodą Grad-CAM.
 
@@ -66,7 +66,7 @@ etapach. Uruchomienie powyższej sekwencji odtwarza wyniki przedstawione w pracy
 | AUC | 0,919 | 0,977 |
 | Parametry | 93 476 | 11 177 538 |
 
-Test McNemara: χ² = 49,371; p = 2,1 · 10⁻¹². Różnica AUC: 0,058 (95% CI: 0,040–0,076).
+Test McNemara: χ² = 49,371; p = 2,1 · 10⁻¹². Różnica AUC: 0,058 (95% CI: 0,040–0,076)
 
 Czas inferencji zależy od sprzętu i będzie się różnił między maszynami.
 
@@ -74,14 +74,14 @@ Czas inferencji zależy od sprzętu i będzie się różnił między maszynami.
 
 `models.check_attention_gradient` sprawdza przed treningiem, czy gradient dociera do warstwy
 uwagi przestrzennej. Warstwa utworzona wewnątrz `forward()` zamiast w konstruktorze nie trafia
-do `model.parameters()` i nigdy nie jest trenowana, a sieć uczy się bez żadnego komunikatu
+do `model.parameters()` i nigdy nie jest trenowana a sieć uczy się bez żadnego komunikatu
 o błędzie.
 
 Mapy Grad-CAM pobierane są z warstwy `pool3` w MammoNet (rozdzielczość 16×16) oraz `layer4`
 w ResNet-18 (7×7). Różnica rozdzielczości przekłada się bezpośrednio na ostrość mapy i została
 uwzględniona w interpretacji wyników.
 
-Ocena wierności lokalizacyjnej map przez porównanie z maskami segmentacji okazała się
+Ocena zgodności lokalizacyjnej map przez porównanie z maskami segmentacji okazała się
 niewykonalna: w wykorzystanym eksporcie maski i wycinki klasyfikacyjne nie są zapisane
 w spójnym układzie współrzędnych. `analyze_attribution.py` wyznacza miary opisujące sam
 rozkład mapy, niezależne od masek.
