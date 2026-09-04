@@ -1,0 +1,9 @@
+data/
+data_masks/
+results/
+figures/
+__pycache__/
+*.pyc
+*.pt
+*.save
+.DS_Store
