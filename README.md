@@ -4,14 +4,14 @@ Kod do pracy *Analiza porównawcza autorskiej sieci konwolucyjnej MammoNet z mod
 uczenia transferowego ResNet-18 w klasyfikacji obrazów mammograficznych z wykorzystaniem
 Explainable AI*, Michał Janiszewski
 
-Zadanie: Rozróżnienie zwapnienia i guzów na wycinkach zmian ogniskowych ze zbioru CBIS-DDSM.
+Rozróżnienie zwapnienia i guzów na wycinkach zmian ogniskowych ze zbioru CBIS-DDSM.
 Porównanie obejmuje skuteczność klasyfikacji, koszt obliczeniowy oraz charakter map
 atrybucji generowanych metodą Grad-CAM.
 
 ## Dane
 
 Repozytorium nie zawiera obrazów. Zbiór CBIS-DDSM jest publicznie dostępny i należy pobrać
-go samodzielnie; użyto eksportu JPEG rozpowszechnianego w serwisie Kaggle
+go samodzielnie, użyto eksportu JPEG rozpowszechnianego w serwisie Kaggle
 (`awsaf49/cbis-ddsm-breast-cancer-image-dataset`). Po rozpakowaniu katalog powinien
 zawierać podkatalogi `csv/` i `jpeg/`.
 
