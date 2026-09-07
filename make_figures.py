@@ -1,8 +1,7 @@
-"""Ryciny do publikacji: krzywe uczenia, macierze pomyłek, ROC, mapy Grad-CAM
+"""Ryciny: krzywe uczenia, macierze pomyłek, ROC, mapy Grad-CAM
 oraz zależność skuteczności od cech klinicznych.
 
-Zapis w EPS (wektor, dla redakcji) i PNG 600 dpi (podgląd). Czcionki osadzane
-jako TrueType, ponieważ Type 3 bywa odrzucany przy składzie.
+Zapis w EPS (wektor) i PNG 600 dpi
 """
 
 import argparse
