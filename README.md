@@ -97,8 +97,8 @@ train.py                  trening
 gradcam.py                mapy atrybucji
 evaluate.py               metryki, Wilson, McNemar, bootstrap, benchmark
 analyze_attribution.py    energia brzegowa, stereotypowość, centroidy
-analyze_clinical.py       podgrupy subtelności i gęstości utkania
-make_figures.py           ryciny publikacyjne
+analyze_clinical.py       podgrupy subtelności/gęstości utkania
+make_figures.py           ryciny 
 ```
 
 ## Licencja
