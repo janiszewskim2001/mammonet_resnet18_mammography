@@ -22,7 +22,7 @@ CSV_TASKS = [
 def build_lookup(dicom_info_csv):
     """Mapuje SeriesInstanceUID na ścieżkę JPEG i kategorię serii.
 
-    Ścieżki w plikach opisowych wskazują na pliki .dcm, a obrazy leżą w katalogach
+    Ścieżki w plikach opisowych wskazują na pliki .dcm a obrazy leżą w katalogach
     nazwanych identyfikatorami serii. Wycinek zmiany i jego maska często dzielą ten
     sam katalog, więc rozróżnia je wyłącznie pole SeriesDescription.
     """
@@ -97,8 +97,8 @@ def process(csv_path, abnormality, split, raw_dir, out_dir, masks_dir, table):
         shutil.copy(src, img_dir / name)
         ok += 1
 
-        # maski zachowane na potrzeby ewentualnej analizy lokalizacyjnej;
-        # obecna wersja analizy ich nie wykorzystuje (patrz README)
+        # maski zachowane na potrzeby ewentualnej analizy lokalizacyjnej
+        # obecna wersja analizy ich nie wykorzystuje 
         if rel_mask is not None:
             m = raw_dir / "jpeg" / rel_mask
             if m.exists() and readable(m):
