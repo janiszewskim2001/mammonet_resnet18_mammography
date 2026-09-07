@@ -51,12 +51,12 @@ def predict(model, loader, device):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--arch", choices=["mammonet", "resnet18"], required=True)
-    ap.add_argument("--data_dir", type=str, default=str(config.DATA_DIR))
-    ap.add_argument("--results_dir", type=str, default=str(config.RESULTS_DIR))
+    ap.add_argument("--data_dir", type=Path, default=config.DATA_DIR)
+    ap.add_argument("--results_dir", type=Path, default=config.RESULTS_DIR)
     ap.add_argument("--epochs", type=int, default=None)
     args = ap.parse_args()
 
-    data_dir, results_dir = Path(args.data_dir), Path(args.results_dir)
+    data_dir, results_dir = args.data_dir, args.results_dir
     results_dir.mkdir(parents=True, exist_ok=True)
 
     set_seed()

@@ -7,6 +7,8 @@ from pathlib import Path
 import pandas as pd
 from PIL import Image
 
+import config
+
 CLASS_MAP = {"calcification": "Zwapnienie", "mass": "Guz"}
 
 CSV_TASKS = [
@@ -95,6 +97,8 @@ def process(csv_path, abnormality, split, raw_dir, out_dir, masks_dir, table):
         shutil.copy(src, img_dir / name)
         ok += 1
 
+        # maski zachowane na potrzeby ewentualnej analizy lokalizacyjnej;
+        # obecna wersja analizy ich nie wykorzystuje (patrz README)
         if rel_mask is not None:
             m = raw_dir / "jpeg" / rel_mask
             if m.exists() and readable(m):
@@ -111,8 +115,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--raw_dir", type=Path, required=True,
                     help="katalog z rozpakowanym zbiorem (zawiera csv/ i jpeg/)")
-    ap.add_argument("--out_dir", type=Path, default=Path("data"))
-    ap.add_argument("--masks_dir", type=Path, default=Path("data_masks"))
+    ap.add_argument("--out_dir", type=Path, default=config.DATA_DIR)
+    ap.add_argument("--masks_dir", type=Path, default=config.MASKS_DIR)
     args = ap.parse_args()
 
     csv_dir = args.raw_dir / "csv"

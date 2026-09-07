@@ -127,7 +127,8 @@ def main():
     print(f"  chi2 = {chi2:.3f}, p = {p_mc:.4g}")
 
     diff, lo, hi, p_boot = bootstrap_auc_diff(labels, pm["probs"], pr["probs"])
-    print(f"\nRóżnica AUC = {diff:.4f}  [{lo:.4f}, {hi:.4f}]  p = {p_boot:.4g}")
+    p_txt = "< 0.001" if p_boot < 0.001 else f"= {p_boot:.4g}"
+    print(f"\nRóżnica AUC = {diff:.4f}  [{lo:.4f}, {hi:.4f}]  p {p_txt}")
 
     mammonet = MammoNet()
     mammonet.load_state_dict(torch.load(rd / "mammonet_best.pt", map_location="cpu"))
