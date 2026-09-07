@@ -1,10 +1,10 @@
 """Ilościowa charakterystyka map Grad-CAM.
 
-Ocena wierności lokalizacyjnej przez porównanie z maskami segmentacji okazała się
-niewykonalna: maski i wycinki klasyfikacyjne w wykorzystanym eksporcie CBIS-DDSM
+Ocena zgodności lokalizacyjnej przez porównanie z maskami segmentacji okazała się
+niewykonalna. Maski i wycinki klasyfikacyjne w wykorzystanym eksporcie CBIS-DDSM
 nie są zapisane w spójnym układzie współrzędnych (maska odpowiada pełnemu
-mammogramowi, wycinek jego fragmentowi, a współrzędne wycięcia nie są dostępne).
-Wyznaczane są więc miary opisujące sam rozkład mapy, niezależne od masek:
+mammogramowi, wycinek jego fragmentowi a współrzędne wycięcia nie są dostępne).
+Wyznaczane są miary opisujące sam rozkład mapy niezależne od masek:
 
   udział energii brzegowej  - ułamek sumy wartości mapy w zewnętrznym pasie kadru
   stereotypowość            - średnia korelacja par map dla różnych obrazów
