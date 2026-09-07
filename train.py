@@ -1,4 +1,4 @@
-"""Trening MammoNet lub ResNet-18 na wycinkach CBIS-DDSM."""
+"""Trening MammoNet/ResNet-18 na wycinkach CBIS-DDSM."""
 
 import argparse
 import json
@@ -94,8 +94,7 @@ def main():
         history["train_acc"].append(tr_acc)
         history["test_acc"].append(te_acc)
 
-        # dokładność testowa waha się między epokami, więc zapisujemy najlepszy stan,
-        # a nie ostatni
+        # dokładność testowa waha się między epokami, więc zapisujemy najlepszy stan a nie ostatni
         flag = ""
         if te_acc > best:
             best = te_acc
