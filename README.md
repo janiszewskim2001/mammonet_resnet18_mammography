@@ -72,9 +72,9 @@ Czas inferencji zależy od sprzętu i będzie się różnił między maszynami.
 
 ## Uwagi metodologiczne
 
-`models.check_attention_gradient` sprawdza przed treningiem, czy gradient dociera do warstwy
+`models.check_attention_gradient` sprawdza przed treningiem czy gradient dociera do warstwy
 uwagi przestrzennej. Warstwa utworzona wewnątrz `forward()` zamiast w konstruktorze nie trafia
-do `model.parameters()` i nigdy nie jest trenowana, a sieć uczy się bez żadnego komunikatu
+do `model.parameters()` i nigdy nie jest trenowana a sieć uczy się bez żadnego komunikatu
 o błędzie.
 
 Mapy Grad-CAM pobierane są z warstwy `pool3` w MammoNet (rozdzielczość 16×16) oraz `layer4`
@@ -82,7 +82,7 @@ w ResNet-18 (7×7). Różnica rozdzielczości przekłada się bezpośrednio na o
 uwzględniona w interpretacji wyników.
 
 Ocena zgodności lokalizacyjnej map przez porównanie z maskami segmentacji okazała się
-niewykonalna: w wykorzystanym eksporcie maski i wycinki klasyfikacyjne nie są zapisane
+niewykonalna. W wykorzystanym eksporcie maski i wycinki klasyfikacyjne nie są zapisane
 w spójnym układzie współrzędnych. `analyze_attribution.py` wyznacza miary opisujące sam
 rozkład mapy, niezależne od masek.
 
